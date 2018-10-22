@@ -11,14 +11,23 @@ enum CarType{
 // class declaration
 class Car{
     
-    var colour = "Red" // string type
+    var colour = "" // string type
     var numberOfSeats = 5 // int type
     var typeOfCar : CarType = .Hatchback // enum type
+    
+    // initilization
+    init(customerChosenColour : String) {
+        
+        colour = customerChosenColour
+    }
 }
 
 
-let myCar = Car() // Car's object - blueprint
+let myCar = Car(customerChosenColour: "blue") // Car's object - blueprint , colour value
 
 print(myCar.colour) // colour value
 print(myCar.numberOfSeats) // numberOfSeats value
 print(myCar.typeOfCar) // typeOfCar value
+
+
+
