@@ -35,7 +35,7 @@ struct Circle: Shape {
 let shapes: [any Shape] = [
     Triangle(base: 10, height: 4),
     Rectangle(width: 3, height: 5),
-    Circle(radius: 1)
+    Circle(radius: 1),
 ]
 
 for shape in shapes {

@@ -7,7 +7,7 @@ struct PolymorphismTests {
     private let shapes: [any Shape] = [
         Triangle(base: 10, height: 4),
         Rectangle(width: 3, height: 5),
-        Circle(radius: 1)
+        Circle(radius: 1),
     ]
 
     @Test("Every shape computes its own area")

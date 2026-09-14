@@ -9,7 +9,7 @@ let package = Package(
         .macOS(.v15),
         .tvOS(.v18),
         .watchOS(.v11),
-        .visionOS(.v2)
+        .visionOS(.v2),
     ],
     products: [
         .library(
@@ -22,7 +22,7 @@ let package = Package(
             name: "ObjectOrientedProgramming",
             swiftSettings: [
                 .swiftLanguageMode(.v6),
-                .enableUpcomingFeature("ExistentialAny")
+                .enableUpcomingFeature("ExistentialAny"),
             ]
         ),
         .testTarget(
@@ -30,8 +30,8 @@ let package = Package(
             dependencies: ["ObjectOrientedProgramming"],
             swiftSettings: [
                 .swiftLanguageMode(.v6),
-                .enableUpcomingFeature("ExistentialAny")
+                .enableUpcomingFeature("ExistentialAny"),
             ]
-        )
+        ),
     ]
 )

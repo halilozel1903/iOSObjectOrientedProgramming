@@ -9,11 +9,13 @@ struct EnumerationsTests {
         #expect(CarType.allCases == [.sedan, .coupe, .hatchback])
     }
 
-    @Test("Door count per car type", arguments: [
-        (CarType.sedan, 4),
-        (CarType.coupe, 2),
-        (CarType.hatchback, 5)
-    ])
+    @Test(
+        "Door count per car type",
+        arguments: [
+            (CarType.sedan, 4),
+            (CarType.coupe, 2),
+            (CarType.hatchback, 5),
+        ])
     func doors(type: CarType, expected: Int) {
         #expect(type.typicalNumberOfDoors == expected)
     }

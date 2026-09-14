@@ -50,11 +50,11 @@ final class Truck: MotorVehicle {
 
 let car = SportsCar()
 car.drive(increasingSpeedBy: 10)
-print(car) // 40 km/h
+print(car)  // 40 km/h
 
 let truck = Truck()
 truck.drive(increasingSpeedBy: 20)
-print(truck) // 20 km/h
+print(truck)  // 20 km/h
 
 car.brake()
 truck.brake()

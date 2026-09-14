@@ -42,7 +42,7 @@ func rename(_ vehicle: Vehicle, to model: String) {
 
 print(ford.model)
 rename(ford, to: "Apple")
-print(ford.model) // the original instance changed
+print(ford.model)  // the original instance changed
 
 // MARK: - Passing a struct hands over a copy
 
@@ -60,6 +60,6 @@ func tuned(_ engine: Engine, addingCylinders extra: Int) -> Engine {
 let engine = Engine(displacementInLiters: 3.0, cylinders: 6)
 let tunedEngine = tuned(engine, addingCylinders: 2)
 
-print(engine.cylinders) // 6 – untouched
-print(tunedEngine.cylinders) // 8
+print(engine.cylinders)  // 6 – untouched
+print(tunedEngine.cylinders)  // 8
 print(bmw.model)
