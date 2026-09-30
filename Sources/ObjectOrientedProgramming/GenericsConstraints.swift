@@ -8,7 +8,7 @@ public struct Score: Comparable, Sendable, CustomStringConvertible {
         self.value = value
     }
 
-    public static func < (lhs: Score, rhs: Score) -> Bool {
+    public static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.value < rhs.value
     }
 
