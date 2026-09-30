@@ -21,11 +21,11 @@ struct Clamped<Value: Comparable> {
 
 struct LimitedVehicle {
     var model: String
-    @Clamped(0...120) var speedInKilometersPerHour: Double
+    @Clamped(0...120) var speedInKilometersPerHour: Double = 0
 }
 
 var car = LimitedVehicle(model: "328i", speedInKilometersPerHour: -5)
-print(car.speedInKilometersPerHour) // 0
+print(car.speedInKilometersPerHour)  // 0
 car.speedInKilometersPerHour = 200
-print(car.speedInKilometersPerHour) // 120
+print(car.speedInKilometersPerHour)  // 120
 print(car.$speedInKilometersPerHour)
