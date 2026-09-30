@@ -3,7 +3,7 @@ import Foundation
 /// Clamps every assignment into an inclusive numeric range. Reading the
 /// projected value (`$speed`) returns the current bounds.
 @propertyWrapper
-public struct Clamped<Value: Comparable>: Sendable where Value: Sendable {
+public struct Clamped<Value: Comparable & Sendable>: Sendable, Equatable {
     public var wrappedValue: Value {
         didSet { wrappedValue = Self.clamp(wrappedValue, to: range) }
     }
@@ -28,11 +28,11 @@ public struct LimitedVehicle: Sendable, Equatable {
     public var model: String
 
     @Clamped(0...120)
-    public var speedInKilometersPerHour: Double
+    public var speedInKilometersPerHour: Double = 0
 
     public init(model: String, speedInKilometersPerHour: Double = 0) {
         self.model = model
-        self._speedInKilometersPerHour = Clamped(wrappedValue: speedInKilometersPerHour, 0...120)
+        self.speedInKilometersPerHour = speedInKilometersPerHour
     }
 
     public var allowedSpeedRange: ClosedRange<Double> { $speedInKilometersPerHour }
