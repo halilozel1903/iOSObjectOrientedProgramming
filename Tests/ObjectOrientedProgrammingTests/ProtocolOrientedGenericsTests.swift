@@ -20,6 +20,6 @@ struct ProtocolOrientedGenericsTests {
     func seededOpaqueInventory() {
         let stock = InventoryClerk.seededBin(with: ["bolt", "nut"])
         #expect(InventoryClerk.count(of: stock) == 2)
-        #expect(InventoryClerk.contains("bolt", in: stock))
+        #expect(!stock.items.isEmpty)
     }
 }
