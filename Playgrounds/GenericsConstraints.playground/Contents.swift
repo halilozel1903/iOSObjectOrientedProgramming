@@ -5,7 +5,7 @@ struct Score: Comparable, CustomStringConvertible {
 
     init(_ value: Int) { self.value = value }
 
-    static func < (lhs: Score, rhs: Score) -> Bool { lhs.value < rhs.value }
+    static func < (lhs: Self, rhs: Self) -> Bool { lhs.value < rhs.value }
     var description: String { "\(value)" }
 }
 
