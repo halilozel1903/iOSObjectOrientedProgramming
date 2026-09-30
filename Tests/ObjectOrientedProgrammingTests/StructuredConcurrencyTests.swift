@@ -11,10 +11,11 @@ struct StructuredConcurrencyTests {
             WorkItem(id: 1, payload: "oil"),
         ]
         let results = await WorkPipeline.processAll(items)
-        #expect(results == [
-            WorkResult(id: 1, summary: "OIL"),
-            WorkResult(id: 2, summary: "BRAKES"),
-        ])
+        #expect(
+            results == [
+                WorkResult(id: 1, summary: "OIL"),
+                WorkResult(id: 2, summary: "BRAKES"),
+            ])
     }
 
     @Test("async let joins sibling tasks")

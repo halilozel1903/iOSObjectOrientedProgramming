@@ -24,11 +24,12 @@ struct CodableExamplesTests {
 
     @Test("Fuel kinds are string-backed")
     func fuelKinds() {
-        #expect(FuelKind.allCases.map(\.rawValue) == [
-            "petrol",
-            "diesel",
-            "electric",
-            "hybrid",
-        ])
+        #expect(
+            FuelKind.allCases.map(\.rawValue) == [
+                "petrol",
+                "diesel",
+                "electric",
+                "hybrid",
+            ])
     }
 }
