@@ -26,7 +26,9 @@ let passport = VehiclePassport(
 let encoder = JSONEncoder()
 encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
 let data = try encoder.encode(passport)
-print(String(data: data, encoding: .utf8)!)
+if let json = String(data: data, encoding: .utf8) {
+    print(json)
+}
 
 let decoded = try JSONDecoder().decode(VehiclePassport.self, from: data)
 print(decoded)
