@@ -29,7 +29,7 @@ public final class CalibrationTable: @unchecked Sendable {
 /// Actor that exposes a `nonisolated` constant and accepts `isolated`
 /// parameters for synchronous reads on a known executor.
 public actor TelemetryHub {
-    public nonisolated let stationName: String
+    nonisolated public let stationName: String
 
     private var latest: [String: Double] = [:]
 
