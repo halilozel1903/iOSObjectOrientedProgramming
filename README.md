@@ -113,7 +113,7 @@ swift format --in-place --recursive Sources Tests Playgrounds Package.swift
 
 ```text
 .
-├── Package.swift                       # Swift 6.2 package manifest (Swift 6 language mode)
+├── Package.swift                       # Swift 6.3 package manifest (Swift 6 language mode)
 ├── Sources/
 │   └── ObjectOrientedProgramming/
 │       ├── Classes.swift               # Classes, encapsulation, value vs. reference
