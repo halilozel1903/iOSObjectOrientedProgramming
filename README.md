@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.2-FA7343?logo=swift&logoColor=white"></a>
-  <a href="https://developer.apple.com/xcode/"><img alt="Xcode" src="https://img.shields.io/badge/Xcode-26-147EFB?logo=xcode&logoColor=white"></a>
+  <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.3-FA7343?logo=swift&logoColor=white"></a>
+  <a href="https://developer.apple.com/xcode/"><img alt="Xcode" src="https://img.shields.io/badge/Xcode-26.6-147EFB?logo=xcode&logoColor=white"></a>
   <img alt="Platforms" src="https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20visionOS-lightgrey">
   <a href="https://www.swift.org/package-manager/"><img alt="SPM" src="https://img.shields.io/badge/SPM-compatible-brightgreen"></a>
   <a href="https://github.com/halilozel1903/iOSObjectOrientedProgramming/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/halilozel1903/iOSObjectOrientedProgramming/actions/workflows/ci.yml/badge.svg"></a>
@@ -60,13 +60,18 @@ works as a reference, interview prep material or course companion.
 
 | Tool | Version |
 | --- | --- |
-| Swift | 6.2 or newer |
-| Xcode | 26 or newer (for playgrounds) |
-| Minimum deployment targets | iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2 |
+| Swift | 6.3 or newer |
+| Xcode | 26.6 or newer (for playgrounds) |
+| Minimum deployment targets | iOS 26, macOS 26, tvOS 26, watchOS 26, visionOS 26 |
 | SwiftLint (optional) | 0.60 or newer |
 
 The package is platform independent: `swift build` and `swift test` also work
-with a Swift 6 toolchain on Linux.
+with a Swift 6.3 toolchain on Linux.
+
+> **Toolchain note:** Swift 6.4 and Apple platform 27 are already released, but
+> GitHub-hosted `xcode-27` runners are still a public preview. This repository
+> stays on Swift 6.3 / platform 26 so CI remains on GA `macos-26` images with
+> Xcode 26.6.
 
 ## Getting Started
 
@@ -108,7 +113,7 @@ swift format --in-place --recursive Sources Tests Playgrounds Package.swift
 
 ```text
 .
-├── Package.swift                       # Swift 6.2 package manifest (Swift 6 language mode)
+├── Package.swift                       # Swift 6.3 package manifest (Swift 6 language mode)
 ├── Sources/
 │   └── ObjectOrientedProgramming/
 │       ├── Classes.swift               # Classes, encapsulation, value vs. reference
