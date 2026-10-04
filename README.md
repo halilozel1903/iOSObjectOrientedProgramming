@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.2-FA7343?logo=swift&logoColor=white"></a>
-  <a href="https://developer.apple.com/xcode/"><img alt="Xcode" src="https://img.shields.io/badge/Xcode-26-147EFB?logo=xcode&logoColor=white"></a>
+  <a href="https://swift.org"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.3-FA7343?logo=swift&logoColor=white"></a>
+  <a href="https://developer.apple.com/xcode/"><img alt="Xcode" src="https://img.shields.io/badge/Xcode-26.6-147EFB?logo=xcode&logoColor=white"></a>
   <img alt="Platforms" src="https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20visionOS-lightgrey">
   <a href="https://www.swift.org/package-manager/"><img alt="SPM" src="https://img.shields.io/badge/SPM-compatible-brightgreen"></a>
   <a href="https://github.com/halilozel1903/iOSObjectOrientedProgramming/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/halilozel1903/iOSObjectOrientedProgramming/actions/workflows/ci.yml/badge.svg"></a>
