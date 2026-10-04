@@ -60,13 +60,18 @@ works as a reference, interview prep material or course companion.
 
 | Tool | Version |
 | --- | --- |
-| Swift | 6.2 or newer |
-| Xcode | 26 or newer (for playgrounds) |
-| Minimum deployment targets | iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2 |
+| Swift | 6.3 or newer |
+| Xcode | 26.6 or newer (for playgrounds) |
+| Minimum deployment targets | iOS 26, macOS 26, tvOS 26, watchOS 26, visionOS 26 |
 | SwiftLint (optional) | 0.60 or newer |
 
 The package is platform independent: `swift build` and `swift test` also work
-with a Swift 6 toolchain on Linux.
+with a Swift 6.3 toolchain on Linux.
+
+> **Toolchain note:** Swift 6.4 and Apple platform 27 are already released, but
+> GitHub-hosted `xcode-27` runners are still a public preview. This repository
+> stays on Swift 6.3 / platform 26 so CI remains on GA `macos-26` images with
+> Xcode 26.6.
 
 ## Getting Started
 
