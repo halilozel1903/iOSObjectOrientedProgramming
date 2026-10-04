@@ -13,9 +13,12 @@ concurrency:
 jobs:
   test:
     name: Build & Test (macOS)
-    runs-on: macos-latest
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v4
+
+      - name: Select Xcode 26.6
+        run: sudo xcode-select -s /Applications/Xcode_26.6.app/Contents/Developer
 
       - name: Show Swift version
         run: swift --version
@@ -38,9 +41,12 @@ jobs:
 
   lint:
     name: Lint & Format
-    runs-on: macos-latest
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v4
+
+      - name: Select Xcode 26.6
+        run: sudo xcode-select -s /Applications/Xcode_26.6.app/Contents/Developer
 
       - name: Install SwiftLint
         run: brew install swiftlint
