@@ -1,0 +1,33 @@
+$ swift --version
+Swift version 6.3.3 (swift-6.3.3-RELEASE)
+Target: x86_64-unknown-linux-gnu
+
+$ swift build
+Building for debugging...
+[0/2] Write sources
+[1/2] Write swift-version-33AAD5318C8D185.txt
+[3/15] Emitting module ObjectOrientedProgramming
+[4/18] Compiling ObjectOrientedProgramming Classes.swift
+[5/18] Compiling ObjectOrientedProgramming CodableExamples.swift
+[6/18] Compiling ObjectOrientedProgramming Enumerations.swift
+[7/18] Compiling ObjectOrientedProgramming ErrorHandling.swift
+[8/18] Compiling ObjectOrientedProgramming PropertyWrappers.swift
+…
+[17/18] Compiling ObjectOrientedProgramming VehicleFleet.swift
+[18/18] Compiling ObjectOrientedProgramming VehicleInheritance.swift
+Build complete! (3.75s)
+
+$ swift test
+◇ Test run started.
+↳ Testing Library Version: 6.3.3 (48d727cc1cf4eda)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Suite "Polymorphism" passed after 0.002 seconds.
+✔ Suite "Result builders" passed after 0.002 seconds.
+✔ Suite "Classes and semantics" passed after 0.002 seconds.
+✔ Suite "Protocol-oriented generics" passed after 0.002 seconds.
+✔ Suite "Generics constraints" passed after 0.002 seconds.
+✔ Suite "Error handling" passed after 0.002 seconds.
+…
+✔ Suite "Structured concurrency" passed after 0.002 seconds.
+✔ Suite "Actor based state" passed after 0.003 seconds.
+✔ Test run with 41 tests in 14 suites passed after 0.003 seconds.

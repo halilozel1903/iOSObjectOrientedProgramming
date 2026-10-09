@@ -75,39 +75,91 @@ with a Swift 6.3 toolchain on Linux.
 
 ## Getting Started
 
-Clone the repository:
+### Clone
 
 ```bash
 git clone https://github.com/halilozel1903/iOSObjectOrientedProgramming.git
 cd iOSObjectOrientedProgramming
 ```
 
-Build and run the tests from the command line:
+### Build and test (CLI)
+
+This repository is a standard Swift package (`Package.swift`,
+`swift-tools-version: 6.3`). From the repo root:
 
 ```bash
+swift --version   # expect Swift 6.3 or newer
 swift build
 swift test
 ```
 
-Or open the package in Xcode and press <kbd>⌘</kbd> + <kbd>U</kbd>:
+| Host | Toolchain | Notes |
+| --- | --- | --- |
+| **macOS** | Xcode 26.6+ (Swift 6.3) | Matches CI (`macos-26` + `/Applications/Xcode_26.6.app`). You can also open the package and press <kbd>⌘</kbd> + <kbd>U</kbd>: `open Package.swift` |
+| **Linux** | Official Swift 6.3.x toolchain (CI uses the `swift:6.3.3` container) | Install from [swift.org](https://www.swift.org/install/), then run the same `swift build` / `swift test` commands. Playgrounds require macOS + Xcode and are skipped on Linux. |
+
+A captured Linux session (Swift 6.3.3, 41 tests / 14 suites) lives under
+[`docs/cli/swift-build-test-linux.png`](docs/cli/swift-build-test-linux.png):
+
+<p align="center">
+  <img src="docs/cli/swift-build-test-linux.png" alt="swift build and swift test on Linux with Swift 6.3.3" width="720">
+</p>
+
+Minimum Apple deployment targets in `Package.swift` are **platform 26**
+(iOS / macOS / tvOS / watchOS / visionOS). Those constraints matter for
+Apple-platform consumers of the library; the package sources themselves are
+Foundation-only and compile on Linux without UIKit or AppKit.
+
+### Playgrounds in Xcode
+
+Each topic under `Playgrounds/` is an Xcode playground that mirrors the
+matching file in `Sources/ObjectOrientedProgramming/`. Playgrounds need
+**macOS with Xcode 26.6 or newer** (they do not run in the Linux Swift
+toolchain).
 
 ```bash
+# Open the whole package in Xcode
 open Package.swift
-```
 
-To explore a single concept interactively, open any playground:
-
-```bash
+# Or open one playground directly
+open Playgrounds/Classes.playground
 open Playgrounds/ProtocolOrientedGenerics.playground
 ```
 
-### Linting and Formatting
+In Xcode: select a playground page, press <kbd>⌘</kbd> + <kbd>⇧</kbd> +
+<kbd>↩</kbd> (Run Playground) or use Editor → Run Playground, and watch
+values appear in the results sidebar. Prefer the package sources +
+`swift test` when you want assertions; use playgrounds for interactive
+exploration.
+
+### Linting and formatting
+
+Optional local checks (also run in CI on macOS):
 
 ```bash
 swiftlint lint --strict
 swift format lint --recursive --strict Sources Tests Playgrounds Package.swift
 swift format --in-place --recursive Sources Tests Playgrounds Package.swift
 ```
+
+## Diagrams
+
+There is no app UI in this package, so documentation visuals are topic maps
+and CLI captures rather than simulator screenshots:
+
+| Asset | Description |
+| --- | --- |
+| [`docs/diagrams/oop-topic-map.png`](docs/diagrams/oop-topic-map.png) | Inheritance and polymorphism hierarchies from the package sources |
+| [`docs/diagrams/project-structure.png`](docs/diagrams/project-structure.png) | Repository layout (sources, tests, playgrounds, docs) |
+| [`docs/cli/swift-build-test-linux.png`](docs/cli/swift-build-test-linux.png) | Real `swift build` / `swift test` output on Linux · Swift 6.3.3 |
+
+<p align="center">
+  <img src="docs/diagrams/oop-topic-map.png" alt="Classic OOP topic map: Animal and MotorVehicle hierarchies plus Shape protocol polymorphism" width="720">
+</p>
+
+<p align="center">
+  <img src="docs/diagrams/project-structure.png" alt="Repository structure diagram for the Swift 6.3 package" width="720">
+</p>
 
 ## Project Structure
 
@@ -134,6 +186,9 @@ swift format --in-place --recursive Sources Tests Playgrounds Package.swift
 ├── Tests/
 │   └── ObjectOrientedProgrammingTests/ # swift-testing suite per topic
 ├── Playgrounds/                        # One Xcode playground per topic
+├── docs/
+│   ├── diagrams/                       # Topic and structure diagrams
+│   └── cli/                            # Captured swift build / swift test output
 ├── .swiftlint.yml                      # SwiftLint configuration
 ├── .swift-format                       # swift-format configuration
 ├── LICENSE                             # MIT license
