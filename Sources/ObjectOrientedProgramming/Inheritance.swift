@@ -39,9 +39,9 @@ public final class Cat: Animal {
     }
 }
 
-/// Two levels of inheritance: `TurkishDog` inherits from `Dog`, which itself
+/// Two levels of inheritance: `GuardDog` inherits from `Dog`, which itself
 /// inherits from `Animal`.
-public final class TurkishDog: Dog {
+public final class GuardDog: Dog {
     override public func sound() -> String {
         "bow-wow-wow"
     }
