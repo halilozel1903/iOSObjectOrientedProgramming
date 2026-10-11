@@ -9,17 +9,17 @@ struct InheritanceTests {
         #expect(Animal(name: "Unknown").sound() == "...")
         #expect(Dog().sound() == "bow-wow")
         #expect(Cat().sound() == "meow")
-        #expect(TurkishDog().sound() == "bow-wow-wow")
+        #expect(GuardDog().sound() == "bow-wow-wow")
     }
 
     @Test("A subclass initializer can customize inherited state")
     func customInitializer() {
-        #expect(Dog(name: "Karabas", isPuppy: true).name == "Karabas (puppy)")
+        #expect(Dog(name: "Buddy", isPuppy: true).name == "Buddy (puppy)")
     }
 
     @Test("Dynamic dispatch picks the subclass implementation")
     func dynamicDispatch() {
-        let animals: [Animal] = [Dog(), Cat(), TurkishDog()]
+        let animals: [Animal] = [Dog(), Cat(), GuardDog()]
 
         #expect(animals.map { $0.sound() } == ["bow-wow", "meow", "bow-wow-wow"])
     }
