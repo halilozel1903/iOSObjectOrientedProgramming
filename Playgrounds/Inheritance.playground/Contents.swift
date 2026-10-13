@@ -36,8 +36,8 @@ final class Cat: Animal {
     }
 }
 
-/// Two levels of inheritance: `Animal` → `Dog` → `TurkishDog`.
-final class TurkishDog: Dog {
+/// Two levels of inheritance: `Animal` → `Dog` → `GuardDog`.
+final class GuardDog: Dog {
     override func sound() -> String {
         "bow-wow-wow"
     }
@@ -45,7 +45,7 @@ final class TurkishDog: Dog {
 
 // MARK: - Dynamic dispatch
 
-let animals: [Animal] = [Dog(), Cat(), TurkishDog()]
+let animals: [Animal] = [Dog(), Cat(), GuardDog()]
 
 for animal in animals {
     print("\(animal.name): \(animal.sound())")
